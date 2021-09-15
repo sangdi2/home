@@ -13,10 +13,4 @@
             <result name="success">/login.jsp</result>
         </action>
     </package>
- <!--   <package name="struts2" extends="struts-default">
-        <action name="registry" class="entity.UserRegistry">
-            <result name="error">/error.jsp</result>
-            <result name="success">/login.jsp</result>
-        </action>
-    </package>-->
 </struts>

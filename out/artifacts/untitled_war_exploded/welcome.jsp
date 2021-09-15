@@ -1,192 +1,114 @@
+
 <%--
   Created by IntelliJ IDEA.
-  User: lwy
-  Date: 2021/6/16
-  Time: 上午9:06
+  User: sangdi
+  Date: 2021/9/13
+  Time: 14:48
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 
-    <base href="<%=basePath%>">
-    <title>大学生心理健康网站</title>
 
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="cache-control" content="no-cache">
-    <meta http-equiv="expires" content="0">
-    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-    <meta http-equiv="description" content="This is my page">
-    <!--
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    -->
     <style>
-        body {
-            background-color: #f3f5f7;
-        }
-        .bian {
-            height: 140px;
-            background-color: #bee1da;
-            margin-left: 70px;
-            margin-right: 70px;
-        }
-        .bian .img {
-            background-image: url("img/logo.png");
-            background-size:477px 140px;
-            width: 477px;
-            height: 140px;
-            float: left;
-        }
-        .bian .hua {
 
-            width: 140px;
-            height: 140px;
-            float: right;
+        #app {
+            width:1200px;
+            height: 1040px;
+            background-color: #64b5ed;
+            box-shadow: 5px 5px 10px rgba(0,0,0,.3);
+            margin: 0 auto;
+        }
+
+
+        ul {
+            list-style:none;
+            padding: 0;
+            margin: 0;
+        }
+        a {
+            color:#ffffff;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+
+        .nav {
+            width:1100px ;
+            height: 50px;
+            background-color: #1766a9;
+            line-height: 30px;
+            margin: 0 auto;
 
         }
-        .bian .hua:hover {
-            box-shadow: 10px 10px 10px -4px rgba(0,0,0,.3);
+        .nav ul li {
+            color: #ffffff;
+            float:left;
+            margin: 7px 40px;
         }
-        .bian .shu {
-            width: 140px;
-            height: 140px;
-            float: right;
-        }
-        .bian .shu:hover {
-            box-shadow: 10px 10px 10px -4px rgba(0, 0, 0, .3);
-        }
-        .bian .ya {
-            width: 140px;
-            height: 140px;
-            float: right;
-        }
-        .bian .ya:hover {
-            box-shadow: 10px 10px 10px -4px rgba(0, 0, 0, .3);
-        }
-        .zhutu {
-            height: 600px;
-            margin-right: 70px;
-            margin-left: 70px;
-            background-image: url("img/zhutu.jpeg");
+
+
+        .banner img {
+            width:1100px;
+            height:450px;
+            background-image: url(laji.jpg);
             background-repeat: no-repeat;
-            background-position: center;
-            background-color: pink;
-            padding-top: 50px;
+            background-size:50%;
+            margin-left: 50px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
-        .zhutu .kuang {
-            width:280px;
-            height: 500px;
-            margin-left: 28px;
-            border-radius: 50px;
-            border: 10px solid #bee1da;
-            background-color: #bee1da;
-            padding-top: 50px;
+        .left {
+            margin-left: 50px;
             float: left;
         }
-        p {
-            font-weight: 600;
-            color: white;
-            text-indent: 2em;
-        }
-        .zhutu .kuang img {
-            width: 290px;
-            height: 159px;
-        }
-        .zhutu .you {
-            width:140px;
-            height: 500px;
-            border-radius: 50px;
-            background-color: white;
-            border: 10px solid #bee1da;
+        .right {
+            width: 236px;
+            height: 473px;
+            background-color:white ;
             float: right;
-            margin-right: 28px;
-        }
-        .you .huaa {
-            float: left;
-            width: 140px;
-            height: 160px;
-            background-color: #bee1da;
-            border-radius: 50px;
-        }
-        .huaa a {
-            color: white;
-            font-weight: 600;
-            text-decoration: none;
-            text-align: center;
-        }
-        .zhutu .huaa:hover {
-            box-shadow: 10px 10px 10px -4px rgba(0, 0, 0, .3);
-        }
-        .you .shua {
-            float: left;
-            width: 140px;
-            height: 160px;
-            background-color: #bee1da;
-            border-radius: 50px;
-        }
-        .shua a {
-            color: white;
-            font-weight: 600;
-            text-decoration: none;
-            text-align: center;
-        }
-        .zhutu .shua:hover {
-            box-shadow: 10px 10px 10px -4px rgba(0, 0, 0, .3);
-        }
-        .you .yaa {
-            float: left;
-            width: 140px;
-            height: 160px;
-            background-color: #bee1da;
-            border-radius: 50px;
-        }
-        .yaa a {
-            color: white;
-            font-weight: 600;
-            text-decoration: none;
-            text-align: center;
-        }
-        .zhutu .yaa:hover {
-            box-shadow: 10px 10px 10px -4px rgba(0, 0, 0, .3);
-        }
-        .you .nan img {
-            width: 140px;
-            height: 500px;
-        }
-        .zhutu .zi {
-            padding-left: 20px;
-        }
+            margin-right: 50px;
 
+        }
+        .right p {
+            margin: 20px 20px;
+            font-weight: 600;
+        }
 
     </style>
 </head>
 <body>
-<div class="bian">
-    <div class="img"></div>
-    <div class="hua"><a href="#"><img src="img/hua.png"></a></div>
-    <div class="shu"><a href="jianjie.jsp"><img src="img/shu.png"></a></div>
-    <div class="ya"><a href="xinling.jsp"><img src="img/ya.png"></a></div>
-</div>
-<div class="zhutu">
-    <div class="kuang">
-        <p>顺从自己的内心而活，才是最好的生活。</p>
-        <p>人生最可怕的不是眼睛看不见了，而是心失去了方向。</p>
-        <p>如若心中有彼岸，梦想之帆迟早会扬起；</p>
-        <p>如若心中有不灭的灯塔，即使九死一生，希望仍在。</p>
-        <p>护好心灯，让它长明，人生就有希望。</p>
-        <img src="img/niao.jpg">
-    </div>
-    <div class="you">
-        <div class="huaa"><a href="#"><img src="img/hua.png"> <div class="zi">网站首页</div></a> </div>
+<div id="app">
 
-        <div class="shua"><a href="jianjie.jsp"><img src="img/shu.png"> <div class="zi">心理健康简介</div></a> </div>
-        <div class="yaa"><a href="xinling.jsp"><img src="img/ya.png"> <div class="zi">心灵驿站小测试</div></a> </div>
+    <div class="nav">
+
+        <ul>
+            <li><a href="welcome.jsp">网站首页</a></li>
+            <li><a href="yuanyin.jsp">产生原因</a></li>
+            <li><a href="yuanze.jsp">分类原则</a></li>
+
+
+        </ul>
+
     </div>
+    <div class="banner">
+        <a href="#"><img src="laji.jpg"> </a>
+    </div>
+    <div class="left">
+        <video src="vido.mp4" controls="controls" width="840">
+            your browser does not support the video tag
+        </video>
+    </div>
+    <div class="right">
+        <p>垃圾分类是指按一定规定或标准将垃圾分类储存、分类投放和分类搬运，从而转变成公共资源的一系列活动的总称。分类的目的是提高垃圾的资源价值和经济价值，力争物尽其用，减少垃圾处理量和处理设备，降低处理成本，减少土地资源的消耗，具有社会、经济、生态等几方面的效益。</p>
+        <p>垃圾在分类储存阶段属于公众的私有品，垃圾经公众分类投放后成为公众所在小区或社区的区域性公共资源，垃圾分类搬运到垃圾集中点或转运站后成为没有排除性的公共资源。</p>
+    </div>
+
 </div>
 </body>
 </html>

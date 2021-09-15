@@ -5,83 +5,45 @@
   Time: 上午8:49
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" import="java.sql.*" errorPage=""%>
 <html>
 <head>
-    <title>Login</title>
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-            background-image: url("img/login.jpg");
-            background-repeat: no-repeat;
-            background-size:100%;
-            background-position: 0px -50px;
-        }
-        .box{
-            width: 300px;
-            padding: 40px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            background-color: #00000068;
-            text-align: center;
-        }
 
-        .box input[type = "text"],.box input[type = "password"]{
-            border: 0;
-            background: none;
-            display: block;
-            margin: 20px auto;
-            text-align: center;
-            border: 2px solid #c8d6e5;
-            padding: 14px 10px;
-            outline: none;
-            color: #ffffff;
-            border-radius: 24px;
-            transition: 0.25s;
-        }
-        h1{
-            color: #FFFFFF;
-            text-transform: uppercase;
-            font-weight: 500;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.staticfile.org/vue/2.6.9/vue.js"></script>
+    
 
-        .box input[type = "text"]:focus, .box input[type = "password"]:focus{
-            width: 280px;
-            border-color: #FFFFFF;
-        }
-        .box input[type = "submit"]{
-            border: 0;
-            font-size: 17px;
-            background: none;
-            display: block;
-            margin: 20px auto;
-            text-align: center;
-            border: 2px solid #FFFFFF;
-            padding: 14px 40px;
-            outline: none;
-            color: #ffffff;
-            border-radius: 24px;
-            transition: 0.25s;
-            cursor: pointer;
-        }
-        .box input[type = "submit"]:hover{
-            background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
-            font-size: x-large;
-
-        }
-
-    </style>
 </head>
 <body>
-<form class="box" action="login.action"method="post">
-    <h1>Login</h1>
-    <input type="text"name="username"placeholder="UserName" />
-    <input type="password"name="password"placeholder="UserPassword" />
-    <input type="submit"  value="Login" />
+<div id='app' class="container">
+    <img src="./bg.jpg" />
+    <div class="panel">
+        <div class="content login">
+            <div class="switch">
+                <span class="active" ><a href="login.jsp">登陆</a></span>
+                <span>/</span>
+                <span class="active" ><a href="register.jsp"> 注册</a></span>
+            </div>
+            <div class='form' id="fromLogin">
+            <form action="login.action" method="post">
 
-</form>
+
+                    <div class="input"><input class="hasValue"  type="text" name="username"  /><label >用户名</label></div>
+                    <div class="input"><input class="hasValue"  type="password" name="password"  /><label >密码</label></div>
+
+
+                <span></span>
+
+                <button type="submit" >登陆</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
+
 </html>

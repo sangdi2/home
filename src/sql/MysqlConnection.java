@@ -6,27 +6,9 @@ import java.sql.*;
 import java.util.Properties;
 
 public class MysqlConnection {
-    /*private static MysqlConnection mysqlConnection=new MysqlConnection();
-    public static Connection connection;
-    public static MysqlConnection getInstance(){
-        if(mysqlConnection==null){
-            synchronized (MysqlConnection.class){
-                if(mysqlConnection==null){
-                    mysqlConnection=new MysqlConnection();
-                }
-            }
-        }
-        return mysqlConnection;
-    }*/
+
     public static Connection getConnection() throws IOException, ClassNotFoundException, SQLException {
-        /**
-         * 步骤：
-         *  1. 声明  driver、jdbcUrl、user、password 四个变量
-         *  2. 新建 jdbc.properties 配置文件，使其在不改源码情况下，变更数据库
-         *  3. 获取 jdbc.properties 文件参数，利用Java反射和输入流方式获取
-         *  4. Class.forName(driver);加载驱动
-         *  5. 获取连接实例
-         */
+
         String driver =null;
         String jdbcUrl =null;
         String user =null;
@@ -67,8 +49,4 @@ public class MysqlConnection {
         }
     }
 }
-/*class A{
-    public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
-        MysqlConnection.getConnection();
-    }
-}*/
+

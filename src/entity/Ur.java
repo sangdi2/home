@@ -54,10 +54,5 @@ public class Ur extends ActionSupport {
         else return "error";
     }
 
-   /* public String execute(){
-        if(getUsername().equals("liang")&& getPassword().equals("liang")){
-            return "success";
-        }
-        return "error";
-    }*/
+
 }

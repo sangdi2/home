@@ -30,6 +30,7 @@ public class Login   {
             }
             MysqlConnection.release(p, conn,rs);
             Set<String> set = hm.keySet();
+
             Iterator it = set.iterator();
             while(it.hasNext())
             {
